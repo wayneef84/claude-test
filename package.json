@@ -1,0 +1,29 @@
+{
+  "name": "whiteout-survival-command-center",
+  "version": "1.0.0",
+  "description": "A modern web application for managing troops, materials, and upgrades in Whiteout Survival game",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "db:init": "sqlite3 whiteout_survival.db < database/schema.sql",
+    "db:seed": "sqlite3 whiteout_survival.db < database/seed_data.sql",
+    "db:setup": "npm run db:init && npm run db:seed"
+  },
+  "keywords": [
+    "whiteout-survival",
+    "game-helper",
+    "troops-logger",
+    "materials-tracker",
+    "cyberpunk",
+    "futuristic-ui"
+  ],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wayneef84/claude-test.git"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

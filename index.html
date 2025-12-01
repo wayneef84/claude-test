@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiteout Survival - Command Center</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="grid-overlay"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <!-- Banner -->
+    <header class="banner">
+        <div class="logo">
+            <span class="logo-icon">❄</span>
+            <span class="logo-text">WHITEOUT<span class="accent">SURVIVAL</span></span>
+        </div>
+        <div class="status-bar">
+            <span class="status-item">SYSTEM ONLINE</span>
+            <span class="status-indicator"></span>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+        <ul class="menu-items">
+            <li class="menu-item active" data-section="home">
+                <span class="menu-icon">◆</span>
+                <span class="menu-text">HOME</span>
+                <span class="menu-glow"></span>
+            </li>
+            <li class="menu-item" data-section="logger">
+                <span class="menu-icon">◆</span>
+                <span class="menu-text">TROOPS LOGGER</span>
+                <span class="menu-glow"></span>
+            </li>
+            <li class="menu-item" data-section="materials">
+                <span class="menu-icon">◆</span>
+                <span class="menu-text">MATERIALS</span>
+                <span class="menu-glow"></span>
+            </li>
+            <li class="menu-item" data-section="upgrades">
+                <span class="menu-icon">◆</span>
+                <span class="menu-text">UPGRADES</span>
+                <span class="menu-glow"></span>
+            </li>
+            <li class="menu-item" data-section="database">
+                <span class="menu-icon">◆</span>
+                <span class="menu-text">DATABASE</span>
+                <span class="menu-glow"></span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-title-container">
+                <h1 class="hero-title">
+                    <span class="title-line">TACTICAL</span>
+                    <span class="title-line">COMMAND</span>
+                    <span class="title-line highlight">CENTER</span>
+                </h1>
+                <div class="title-underline"></div>
+            </div>
+
+            <p class="hero-subtitle">
+                Advanced combat management system for strategic operations
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <div class="stat-icon">⚔</div>
+                    <div class="stat-content">
+                        <div class="stat-label">INFANTRY</div>
+                        <div class="stat-value">0</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">🗡</div>
+                    <div class="stat-content">
+                        <div class="stat-label">LANCER</div>
+                        <div class="stat-value">0</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">🏹</div>
+                    <div class="stat-content">
+                        <div class="stat-label">MARKSMAN</div>
+                        <div class="stat-value">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-actions">
+                <button class="cta-button primary">
+                    <span class="button-text">DEPLOY LOGGER</span>
+                    <span class="button-arrow">→</span>
+                </button>
+                <button class="cta-button secondary">
+                    <span class="button-text">VIEW DATABASE</span>
+                    <span class="button-arrow">→</span>
+                </button>
+            </div>
+
+            <div class="tech-details">
+                <div class="tech-line">
+                    <span class="tech-label">COORDINATES:</span>
+                    <span class="tech-value" id="coords">48.8566° N, 2.3522° E</span>
+                </div>
+                <div class="tech-line">
+                    <span class="tech-label">TIMESTAMP:</span>
+                    <span class="tech-value" id="timestamp"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hologram">
+                <div class="hologram-ring ring-1"></div>
+                <div class="hologram-ring ring-2"></div>
+                <div class="hologram-ring ring-3"></div>
+                <div class="hologram-center">
+                    <div class="hologram-icon">❄</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
