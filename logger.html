@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troops Logger - Whiteout Survival</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="logger.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="grid-overlay"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <!-- Banner -->
+    <header class="banner">
+        <div class="logo">
+            <span class="logo-icon">❄</span>
+            <span class="logo-text">WHITEOUT<span class="accent">SURVIVAL</span></span>
+        </div>
+        <div class="status-bar">
+            <span class="status-item">TROOPS LOGGER ACTIVE</span>
+            <span class="status-indicator"></span>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+        <ul class="menu-items">
+            <li class="menu-item" data-section="home" onclick="window.location.href='index.html'">
+                <span class="menu-icon">◆</span>
+                <span class="menu-text">HOME</span>
+                <span class="menu-glow"></span>
+            </li>
+            <li class="menu-item active" data-section="logger">
+                <span class="menu-icon">◆</span>
+                <span class="menu-text">TROOPS LOGGER</span>
+                <span class="menu-glow"></span>
+            </li>
+            <li class="menu-item" data-section="materials" onclick="window.location.href='materials.html'">
+                <span class="menu-icon">◆</span>
+                <span class="menu-text">MATERIALS</span>
+                <span class="menu-glow"></span>
+            </li>
+            <li class="menu-item" data-section="upgrades">
+                <span class="menu-icon">◆</span>
+                <span class="menu-text">UPGRADES</span>
+                <span class="menu-glow"></span>
+            </li>
+            <li class="menu-item" data-section="database">
+                <span class="menu-icon">◆</span>
+                <span class="menu-text">DATABASE</span>
+                <span class="menu-glow"></span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="logger-container">
+        <div class="logger-header">
+            <h1 class="page-title">
+                <span class="title-icon">⚔</span>
+                TROOPS LOGGER
+            </h1>
+            <p class="page-subtitle">Tactical Unit Management System</p>
+        </div>
+
+        <!-- Stats Summary -->
+        <section class="stats-summary">
+            <div class="summary-card">
+                <div class="summary-icon">⚔</div>
+                <div class="summary-content">
+                    <div class="summary-label">Total Infantry</div>
+                    <div class="summary-value" id="total-infantry">0</div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">🗡</div>
+                <div class="summary-content">
+                    <div class="summary-label">Total Lancer</div>
+                    <div class="summary-value" id="total-lancer">0</div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">🏹</div>
+                <div class="summary-content">
+                    <div class="summary-label">Total Marksman</div>
+                    <div class="summary-value" id="total-marksman">0</div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">💪</div>
+                <div class="summary-content">
+                    <div class="summary-label">Total Power</div>
+                    <div class="summary-value" id="total-power">0</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="logger-grid">
+            <!-- Add/Edit Form -->
+            <section class="logger-form-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="section-icon">➕</span>
+                        ADD TROOP ENTRY
+                    </h2>
+                </div>
+
+                <form id="troop-form" class="troop-form">
+                    <div class="form-group">
+                        <label for="troop-type" class="form-label">
+                            <span class="label-icon">🎯</span>
+                            TROOP TYPE
+                        </label>
+                        <select id="troop-type" class="form-input" required>
+                            <option value="">Select Troop Type</option>
+                            <option value="Infantry">⚔ Infantry</option>
+                            <option value="Lancer">🗡 Lancer</option>
+                            <option value="Marksman">🏹 Marksman</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity" class="form-label">
+                            <span class="label-icon">📊</span>
+                            QUANTITY
+                        </label>
+                        <input
+                            type="number"
+                            id="quantity"
+                            class="form-input"
+                            placeholder="Enter troop quantity"
+                            min="0"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tier" class="form-label">
+                            <span class="label-icon">⭐</span>
+                            TIER LEVEL
+                        </label>
+                        <select id="tier" class="form-input" required>
+                            <option value="1">Tier 1</option>
+                            <option value="2">Tier 2</option>
+                            <option value="3">Tier 3</option>
+                            <option value="4">Tier 4</option>
+                            <option value="5">Tier 5</option>
+                            <option value="6">Tier 6</option>
+                            <option value="7">Tier 7</option>
+                            <option value="8">Tier 8</option>
+                            <option value="9">Tier 9</option>
+                            <option value="10">Tier 10</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="power-level" class="form-label">
+                            <span class="label-icon">⚡</span>
+                            POWER LEVEL (Optional)
+                        </label>
+                        <input
+                            type="number"
+                            id="power-level"
+                            class="form-input"
+                            placeholder="Enter power level"
+                            min="0"
+                        >
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="form-button primary">
+                            <span class="button-icon">💾</span>
+                            <span class="button-text">SAVE ENTRY</span>
+                        </button>
+                        <button type="button" class="form-button secondary" id="clear-form">
+                            <span class="button-icon">🔄</span>
+                            <span class="button-text">CLEAR</span>
+                        </button>
+                    </div>
+
+                    <input type="hidden" id="edit-id" value="">
+                </form>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h3 class="quick-actions-title">QUICK ACTIONS</h3>
+                    <button class="quick-action-btn" onclick="logTroopAction('Trained')">
+                        <span>✓</span> Log Training
+                    </button>
+                    <button class="quick-action-btn" onclick="logTroopAction('Lost')">
+                        <span>✗</span> Log Losses
+                    </button>
+                    <button class="quick-action-btn" onclick="logTroopAction('Healed')">
+                        <span>❤</span> Log Healing
+                    </button>
+                    <button class="quick-action-btn" onclick="exportData()">
+                        <span>📤</span> Export Data
+                    </button>
+                </div>
+            </section>
+
+            <!-- Troops List -->
+            <section class="troops-list-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="section-icon">📋</span>
+                        CURRENT TROOPS
+                    </h2>
+                    <button class="refresh-button" onclick="loadTroops()">
+                        <span>🔄</span> REFRESH
+                    </button>
+                </div>
+
+                <div class="filter-bar">
+                    <select id="filter-type" class="filter-select" onchange="filterTroops()">
+                        <option value="all">All Types</option>
+                        <option value="Infantry">Infantry Only</option>
+                        <option value="Lancer">Lancer Only</option>
+                        <option value="Marksman">Marksman Only</option>
+                    </select>
+                    <select id="filter-tier" class="filter-select" onchange="filterTroops()">
+                        <option value="all">All Tiers</option>
+                        <option value="1">Tier 1</option>
+                        <option value="2">Tier 2</option>
+                        <option value="3">Tier 3</option>
+                        <option value="4">Tier 4</option>
+                        <option value="5">Tier 5</option>
+                        <option value="6">Tier 6</option>
+                        <option value="7">Tier 7</option>
+                        <option value="8">Tier 8</option>
+                        <option value="9">Tier 9</option>
+                        <option value="10">Tier 10</option>
+                    </select>
+                </div>
+
+                <div id="troops-list" class="troops-list">
+                    <!-- Troops will be loaded here -->
+                    <div class="empty-state">
+                        <div class="empty-icon">📦</div>
+                        <p>No troops logged yet</p>
+                        <p class="empty-hint">Add your first troop entry to get started</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Activity Log -->
+        <section class="activity-log-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-icon">📜</span>
+                    RECENT ACTIVITY
+                </h2>
+                <button class="clear-log-button" onclick="clearActivityLog()">
+                    <span>🗑</span> CLEAR LOG
+                </button>
+            </div>
+            <div id="activity-log" class="activity-log">
+                <!-- Activity entries will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="logger.js"></script>
+</body>
+</html>

@@ -12,6 +12,17 @@ A modern web application for managing troops, materials, and upgrades in the Whi
   - Animated hologram visual effects
   - Particle system background
 
+- **Troops Logger**: Full-featured troop management system ✨NEW
+  - Add, edit, and delete troop entries
+  - Track Infantry, Lancer, and Marksman units
+  - Tier levels (1-10) and power calculations
+  - Real-time stats summary dashboard
+  - Filter by troop type and tier
+  - Activity log with history tracking
+  - Data export to JSON
+  - LocalStorage persistence
+  - Animated notifications
+
 - **Database Schema**: Comprehensive SQLite database structure
   - Troops tracking (Infantry, Lancer, Marksman)
   - Dynamic materials management
@@ -20,10 +31,10 @@ A modern web application for managing troops, materials, and upgrades in the Whi
   - User settings and preferences
 
 ### Planned Features
-- **Troops Logger**: Record and track troop counts
 - **Materials Manager**: Monitor resource inventory
 - **Upgrade Calculator**: Calculate materials needed for upgrades
 - **Historical Analytics**: View trends and patterns
+- **Backend API**: Connect frontend to database
 
 ## Design Inspiration
 
@@ -47,11 +58,17 @@ This project draws inspiration from the legendary **2Advanced Studios** (founded
 ```
 whiteout-survival/
 ├── index.html              # Main homepage
-├── styles.css              # Futuristic styling and animations
-├── script.js               # Interactive functionality
+├── logger.html             # Troops logger page
+├── styles.css              # Main futuristic styling
+├── logger.css              # Logger-specific styles
+├── script.js               # Main interactive functionality
+├── logger.js               # Troops logger functionality
+├── serve.sh                # Linux/Mac server script
+├── serve.bat               # Windows server script
 ├── database/
 │   ├── schema.sql          # Database schema definition
 │   └── seed_data.sql       # Sample data and upgrade tables
+├── package.json            # Project configuration
 └── README.md               # This file
 ```
 
@@ -77,11 +94,73 @@ whiteout-survival/
 
 ## Getting Started
 
-### View the Homepage
+### Quick Start - Preview with URL
 
-Simply open `index.html` in a modern web browser to see the command center interface.
+To preview the webapp with a local URL, you need to run a local web server:
 
-### Set Up the Database
+#### Option 1: Using the included scripts (Easiest)
+
+**On Linux/Mac:**
+```bash
+./serve.sh
+```
+
+**On Windows:**
+```bash
+serve.bat
+```
+
+Then open your browser to:
+- **http://localhost:8000**
+- **http://127.0.0.1:8000**
+
+#### Option 2: Using Python directly
+
+```bash
+# Python 3
+python3 -m http.server 8000
+
+# Python 2
+python -m SimpleHTTPServer 8000
+```
+
+#### Option 3: Using Node.js
+
+```bash
+# Install http-server globally (one time)
+npm install -g http-server
+
+# Run server
+http-server -p 8000
+```
+
+#### Option 4: Using PHP
+
+```bash
+php -S localhost:8000
+```
+
+### Available Pages
+
+Once the server is running, you can access:
+
+- **Homepage**: http://localhost:8000/index.html
+- **Troops Logger**: http://localhost:8000/logger.html
+
+### Using the Troops Logger
+
+1. Navigate to the Troops Logger page
+2. Select troop type (Infantry, Lancer, or Marksman)
+3. Enter quantity and tier level
+4. Optionally add power level
+5. Click "SAVE ENTRY" to add to your roster
+6. View your troops in the list with real-time stats
+7. Edit or delete entries as needed
+8. Export your data using the "Export Data" button
+
+**Pro Tip**: Open the browser console and type `loadSampleData()` to load sample troops for testing!
+
+### Set Up the Database (Optional - for backend integration)
 
 ```bash
 # Create database and apply schema
@@ -89,6 +168,9 @@ sqlite3 whiteout_survival.db < database/schema.sql
 
 # Load sample data
 sqlite3 whiteout_survival.db < database/seed_data.sql
+
+# Or use npm script
+npm run db:setup
 ```
 
 ## Color Palette
